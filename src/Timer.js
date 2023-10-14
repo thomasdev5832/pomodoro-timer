@@ -7,10 +7,16 @@ import SettingsButton from "./SettingsButton.js";
 import {useContext, useState, useEffect, useRef} from "react";
 import SettingsContext from "./SettingsContext";
 
+import useSound from 'use-sound';
+import alarmSound from './assets/button-notification.wav';
+
 const red = '#f54e4e';
 const green = '#4aec8c';
 
 function Timer() {
+  
+  const [play] = useSound(alarmSound);
+
   const settingsInfo = useContext(SettingsContext);
 
   const [isPaused, setIsPaused] = useState(true);
@@ -47,14 +53,15 @@ function Timer() {
         return;
       }
       if (secondsLeftRef.current === 0) {
-        return switchMode();
+        switchMode();
+        play();
       }
 
       tick();
     },1000);
 
     return () => clearInterval(interval);
-  }, [settingsInfo]);
+  }, [settingsInfo, play]);
 
   const totalSeconds = mode === 'work'
     ? settingsInfo.workMinutes * 60
