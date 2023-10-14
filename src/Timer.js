@@ -33,6 +33,7 @@ function Timer() {
   }
 
   useEffect(() => {
+    document.title = "Pomo Timer";  
 
     function switchMode() {
       const nextMode = modeRef.current === 'work' ? 'break' : 'work';

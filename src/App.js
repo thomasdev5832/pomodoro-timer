@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './Footer';
 import Settings from './Settings';
 import SettingsContext from './SettingsContext';
 import Timer from "./Timer";
@@ -22,6 +23,7 @@ function App() {
       }}>
         {showSettings ? <Settings /> :  <Timer />}
       </SettingsContext.Provider>
+      <Footer />
     </main>
   );
 }
