@@ -1,0 +1,38 @@
+.slider {
+    height: 40px;
+    border: 2px solid var(--red);
+    border-radius: 20px;
+}
+
+.thumb{
+    background-color: var(--red);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: 0;
+}
+
+.thumb:hover {
+    filter: opacity(90%);
+}
+
+.slider.green {
+    border: 2px solid var(--green);
+}
+
+.slider.green .thumb {
+    background-color: var(--green);
+}
+
+.back-button {
+    height: 20px;
+    width: 40px;
+    background-color: red;
+}
